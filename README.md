@@ -10,7 +10,7 @@ A simple CLI assistant to quickly search and reference Mac terminal commands.
 
 ## Installation
 
-git clone https://github.com/YOUR_USERNAME/mac-command-agent
+git clone https://github.com/myst9811/mac-command-agent
 cd mac-command-agent
 pip install -r requirements.txt
 
