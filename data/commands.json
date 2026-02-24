@@ -1,0 +1,20 @@
+{
+  "files": [
+    {"cmd": "ls -la", "desc": "List files with details"},
+    {"cmd": "cd <dir>", "desc": "Change directory"},
+    {"cmd": "pwd", "desc": "Show current directory"},
+    {"cmd": "open .", "desc": "Open folder in Finder"}
+  ],
+  "git": [
+    {"cmd": "git clone <url>", "desc": "Clone repo"},
+    {"cmd": "git status", "desc": "Check repo status"},
+    {"cmd": "git add .", "desc": "Stage all changes"},
+    {"cmd": "git commit -m 'msg'", "desc": "Commit changes"},
+    {"cmd": "git push origin main", "desc": "Push to GitHub"}
+  ],
+  "network": [
+    {"cmd": "ping google.com", "desc": "Test connectivity"},
+    {"cmd": "ifconfig", "desc": "Show network interfaces"},
+    {"cmd": "curl ifconfig.me", "desc": "Show public IP"}
+  ]
+}
