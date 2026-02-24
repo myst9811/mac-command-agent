@@ -1,20 +1,99 @@
 {
   "files": [
-    {"cmd": "ls -la", "desc": "List files with details"},
+    {"cmd": "ls -la", "desc": "List all files with details"},
     {"cmd": "cd <dir>", "desc": "Change directory"},
-    {"cmd": "pwd", "desc": "Show current directory"},
-    {"cmd": "open .", "desc": "Open folder in Finder"}
+    {"cmd": "pwd", "desc": "Show current directory path"},
+    {"cmd": "open .", "desc": "Open current folder in Finder"},
+    {"cmd": "mkdir -p <dir>", "desc": "Create nested directories"},
+    {"cmd": "rm -rf <dir>", "desc": "Remove directory and all contents"},
+    {"cmd": "cp -r <src> <dst>", "desc": "Copy files or directories recursively"},
+    {"cmd": "mv <src> <dst>", "desc": "Move or rename a file"},
+    {"cmd": "find . -name \"*.py\"", "desc": "Find files by name pattern"},
+    {"cmd": "cat <file>", "desc": "Print file contents to terminal"}
   ],
   "git": [
-    {"cmd": "git clone <url>", "desc": "Clone repo"},
-    {"cmd": "git status", "desc": "Check repo status"},
+    {"cmd": "git clone <url>", "desc": "Clone a remote repository"},
+    {"cmd": "git status", "desc": "Show working tree status"},
     {"cmd": "git add .", "desc": "Stage all changes"},
-    {"cmd": "git commit -m 'msg'", "desc": "Commit changes"},
-    {"cmd": "git push origin main", "desc": "Push to GitHub"}
+    {"cmd": "git commit -m 'msg'", "desc": "Commit staged changes with message"},
+    {"cmd": "git push origin main", "desc": "Push commits to remote main branch"},
+    {"cmd": "git log --oneline", "desc": "Show compact commit history"},
+    {"cmd": "git diff", "desc": "Show unstaged changes"},
+    {"cmd": "git stash", "desc": "Stash uncommitted changes temporarily"},
+    {"cmd": "git checkout -b <branch>", "desc": "Create and switch to new branch"},
+    {"cmd": "git merge <branch>", "desc": "Merge branch into current branch"},
+    {"cmd": "git pull origin main", "desc": "Pull latest changes from remote"},
+    {"cmd": "git reset --hard HEAD~1", "desc": "Undo last commit and discard changes"}
   ],
   "network": [
-    {"cmd": "ping google.com", "desc": "Test connectivity"},
-    {"cmd": "ifconfig", "desc": "Show network interfaces"},
-    {"cmd": "curl ifconfig.me", "desc": "Show public IP"}
+    {"cmd": "ping google.com", "desc": "Test network connectivity"},
+    {"cmd": "ifconfig", "desc": "Show network interface configuration"},
+    {"cmd": "curl ifconfig.me", "desc": "Show your public IP address"},
+    {"cmd": "netstat -an", "desc": "Show all active network connections"},
+    {"cmd": "nslookup <domain>", "desc": "DNS lookup for a domain"},
+    {"cmd": "traceroute <host>", "desc": "Trace network path to host"},
+    {"cmd": "lsof -i :<port>", "desc": "Show process listening on a port"},
+    {"cmd": "nc -zv <host> <port>", "desc": "Test TCP port connectivity"}
+  ],
+  "process": [
+    {"cmd": "ps aux", "desc": "List all running processes"},
+    {"cmd": "top", "desc": "Live interactive process monitor"},
+    {"cmd": "kill <pid>", "desc": "Terminate process by PID"},
+    {"cmd": "kill -9 <pid>", "desc": "Force kill process by PID"},
+    {"cmd": "lsof -i", "desc": "List all open network files and sockets"},
+    {"cmd": "htop", "desc": "Interactive process viewer with colors"},
+    {"cmd": "pgrep <name>", "desc": "Find process ID by name"},
+    {"cmd": "pkill <name>", "desc": "Kill process by name"}
+  ],
+  "disk": [
+    {"cmd": "df -h", "desc": "Show disk usage by filesystem in human readable format"},
+    {"cmd": "du -sh <dir>", "desc": "Show total size of a directory"},
+    {"cmd": "du -sh * | sort -h", "desc": "List directories sorted by size"},
+    {"cmd": "diskutil list", "desc": "List all disks and partitions"},
+    {"cmd": "diskutil info /dev/disk0", "desc": "Show detailed info about a disk"},
+    {"cmd": "ncdu <dir>", "desc": "Interactive disk usage explorer"},
+    {"cmd": "ls -lhS", "desc": "List files sorted by size"},
+    {"cmd": "find . -size +100M", "desc": "Find files larger than 100MB"}
+  ],
+  "permissions": [
+    {"cmd": "chmod 755 <file>", "desc": "Set rwxr-xr-x permissions on file"},
+    {"cmd": "chmod +x <file>", "desc": "Make a file executable"},
+    {"cmd": "chown user:group <file>", "desc": "Change file owner and group"},
+    {"cmd": "ls -l", "desc": "Show file permissions in long format"},
+    {"cmd": "umask", "desc": "Show or set default permission mask"},
+    {"cmd": "chmod -R 644 <dir>", "desc": "Recursively set permissions on directory"},
+    {"cmd": "sudo chown -R $(whoami) <dir>", "desc": "Take ownership of a directory recursively"},
+    {"cmd": "stat <file>", "desc": "Show detailed file metadata and permissions"}
+  ],
+  "text": [
+    {"cmd": "grep -r \"pattern\" .", "desc": "Search for pattern recursively in files"},
+    {"cmd": "grep -n \"pattern\" <file>", "desc": "Search file and show line numbers"},
+    {"cmd": "sed -i '' 's/old/new/g' <file>", "desc": "Find and replace text in file"},
+    {"cmd": "awk '{print $1}' <file>", "desc": "Print first column of each line"},
+    {"cmd": "sort <file>", "desc": "Sort lines of a file alphabetically"},
+    {"cmd": "uniq <file>", "desc": "Remove duplicate adjacent lines"},
+    {"cmd": "wc -l <file>", "desc": "Count number of lines in file"},
+    {"cmd": "head -n 20 <file>", "desc": "Show first 20 lines of file"},
+    {"cmd": "tail -f <file>", "desc": "Follow file output in real time"}
+  ],
+  "brew": [
+    {"cmd": "brew install <pkg>", "desc": "Install a Homebrew package"},
+    {"cmd": "brew uninstall <pkg>", "desc": "Remove an installed Homebrew package"},
+    {"cmd": "brew update", "desc": "Update Homebrew itself to latest version"},
+    {"cmd": "brew upgrade", "desc": "Upgrade all installed packages"},
+    {"cmd": "brew list", "desc": "List all installed Homebrew packages"},
+    {"cmd": "brew search <term>", "desc": "Search for available Homebrew packages"},
+    {"cmd": "brew info <pkg>", "desc": "Show info and dependencies for a package"},
+    {"cmd": "brew doctor", "desc": "Check Homebrew installation for issues"}
+  ],
+  "system": [
+    {"cmd": "sw_vers", "desc": "Show macOS version information"},
+    {"cmd": "uname -a", "desc": "Show all system information"},
+    {"cmd": "uptime", "desc": "Show how long the system has been running"},
+    {"cmd": "whoami", "desc": "Show the current logged-in user"},
+    {"cmd": "hostname", "desc": "Show or set the machine hostname"},
+    {"cmd": "date", "desc": "Show current date and time"},
+    {"cmd": "caffeinate -t 3600", "desc": "Prevent Mac from sleeping for 1 hour"},
+    {"cmd": "defaults write com.apple.finder AppleShowAllFiles YES", "desc": "Show hidden files in Finder"}
   ]
 }
