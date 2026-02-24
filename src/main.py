@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 from rich.console import Console
 from rich.table import Table
+from search_engine import nlp_search
 
 console = Console()
 
@@ -35,10 +36,16 @@ def search(term, commands):
     table.add_column("Description")
     table.add_column("Topic", style="cyan")
 
-    for topic, cmds in commands.items():
-        for c in cmds:
-            if term.lower() in c["cmd"].lower() or term.lower() in c["desc"].lower():
-                table.add_row(c["cmd"], c["desc"], topic)
+    results = nlp_search(term, commands)
+
+    if not results:
+        for topic, cmds in commands.items():
+            for c in cmds:
+                if term.lower() in c["cmd"].lower() or term.lower() in c["desc"].lower():
+                    table.add_row(c["cmd"], c["desc"], topic)
+    else:
+        for r in results:
+            table.add_row(r["cmd"], r["desc"], r["topic"])
 
     console.print(table)
 

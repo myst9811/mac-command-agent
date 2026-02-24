@@ -2,3 +2,5 @@ markdown-it-py==3.0.0
 mdurl==0.1.2
 Pygments==2.19.2
 rich==14.3.3
+rapidfuzz>=3.0.0
+rank-bm25>=0.2.2
